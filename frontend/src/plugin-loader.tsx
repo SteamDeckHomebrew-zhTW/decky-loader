@@ -107,7 +107,7 @@ class PluginLoader extends Logger {
     if (versionInfo?.remote && versionInfo?.remote?.tag_name != versionInfo?.current) {
       this.toaster.toast({
         title: 'Decky',
-        body: `Update to ${versionInfo?.remote?.tag_name} available!`,
+        body: `可更新至版本 ${versionInfo?.remote?.tag_name} ！`,
         onClick: () => Router.Navigate('/decky/settings'),
       });
       this.deckyState.setHasLoaderUpdate(true);
@@ -127,7 +127,7 @@ class PluginLoader extends Logger {
     if (updates?.size > 0) {
       this.toaster.toast({
         title: 'Decky',
-        body: `Updates available for ${updates.size} plugin${updates.size > 1 ? 's' : ''}!`,
+        body: `可更新 ${updates.size} 個外掛程式！`,
         onClick: () => Router.Navigate('/decky/settings/plugins'),
       });
     }
@@ -156,7 +156,7 @@ class PluginLoader extends Logger {
         }}
       >
         <div className={staticClasses.Title} style={{ flexDirection: 'column' }}>
-          Uninstall {name}?
+          解除安裝 {name}？
         </div>
       </ConfirmModal>,
     );

@@ -197,7 +197,7 @@ const PluginCard: FC<PluginCardProps> = ({ plugin }) => {
                 onClick={() =>
                   isLegacyPlugin(plugin)
                     ? requestLegacyPluginInstall(plugin, Object.keys(plugin.versions)[selectedOption])
-                    : requestPluginInstall(plugin, plugin.versions[selectedOption])
+                    : requestPluginInstall(plugin.name, plugin.versions[selectedOption])
                 }
               >
                 安裝
@@ -221,7 +221,7 @@ const PluginCard: FC<PluginCardProps> = ({ plugin }) => {
                         label: version.name,
                       }))) as SingleDropdownOption[]
                 }
-                strDefaultLabel={'Select a version'}
+                strDefaultLabel={'選擇一個版本'}
                 selectedOption={selectedOption}
                 onChange={({ data }) => setSelectedOption(data)}
               />

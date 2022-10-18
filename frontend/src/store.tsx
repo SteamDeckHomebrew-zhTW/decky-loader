@@ -10,7 +10,6 @@ export interface StorePluginVersion {
 export interface StorePlugin {
   id: number;
   name: string;
-  ghname: string;
   versions: StorePluginVersion[];
   author: string;
   description: string;
@@ -30,6 +29,7 @@ export interface LegacyStorePlugin {
 // name: version
 export type PluginUpdateMapping = Map<string, StorePluginVersion>;
 
+// https://beta.deckbrew.xyz/plugins
 export function getPluginList(): Promise<StorePlugin[]> {
   return fetch('https://raw.githubusercontent.com/SteamDeckHomebrew-zhTW/decky-plugin-database-json/main/plugins.json', {
     method: 'GET',
@@ -76,8 +76,8 @@ export function requestLegacyPluginInstall(plugin: LegacyStorePlugin, selectedVe
 
 export async function requestPluginInstall(plugin: string, selectedVer: StorePluginVersion) {
   await window.DeckyPluginLoader.callServerMethod('install_plugin', {
-    name: plugin.name,
-    artifact: `https://github.com/SteamDeckHomebrew-zhTW/${plugin.ghname}/archive/refs/heads/main.zip`,
+    name: plugin,
+    artifact: `https://github.com/SteamDeckHomebrew-zhTW/decky-plugin-database-file/raw/main/${selectedVer.hash}.zip`,
     version: selectedVer.name,
   });
 }

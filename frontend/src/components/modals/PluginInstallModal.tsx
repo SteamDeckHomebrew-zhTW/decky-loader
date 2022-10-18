@@ -28,11 +28,11 @@ const PluginInstallModal: FC<PluginInstallModalProps> = ({ artifact, version, ha
       }}
     >
       <div className={staticClasses.Title} style={{ flexDirection: 'column' }}>
-        {hash == 'False' ? <h3 style={{ color: 'red' }}>!!!!NO HASH PROVIDED!!!!</h3> : null}
+        {hash == 'False' ? <h3 style={{ color: 'red' }}>!!!! 此文件無 hash 驗證 !!!!</h3> : null}
         <div style={{ flexDirection: 'row' }}>
-          {loading && <Spinner style={{ width: '20px' }} />} {loading ? '正在安裝' : '安裝'} {artifact}
-          {version ? ' version ' + version : null}
-          {!loading && '?'}
+          {loading && <Spinner style={{ width: '20px' }} />} {loading ? '正在安裝' : '要安裝'} {artifact}
+          {version ? ' 版本 ' + version : null}
+          {!loading && '？'}
         </div>
       </div>
     </ConfirmModal>
