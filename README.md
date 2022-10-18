@@ -49,7 +49,7 @@ Decky Loader 是一個用於Steam Deck 的自製外掛程式啟動器。它可�
 1. 按下 <img src="./docs/images/light/steam.svg#gh-dark-mode-only" height=16><img src="./docs/images/dark/steam.svg#gh-light-mode-only" height=16> 按鈕，打開「電源」選單。
 1. 選擇「切換至桌面」。
 1. （如果你已經建立了管理員密碼，可以跳過這一步。）點左下角開始，左側選擇「設定」，右側打開「系統設定」。左側選擇「Users」(使用者)，右側選擇「Change Password」，兩個輸入框內輸入相同的密碼，然後選擇「Set Password」。
-1. 開啟 Konsole 程式，選擇你要安裝的 Decky Loader 的版本，並將以下指令貼到 Konsole 應用程式中(程式右上角有 Paste 貼上按鈕)，然後按下鍵盤的 Enter。
+1. 開啟 Konsole 程式，選擇你要安裝的 Decky Loader 的版本，並將以下指令貼到 Konsole 應用程式中(程式右上角有 Paste 貼上按鈕)，然後按下鍵盤的 Enter。安裝過程中會要求輸入密碼，你輸入時螢幕上不會有任何提示，輸入完成按下鍵盤的 Enter 即可。
    - **最新正式版**  
      為大多數使用者準備的。這是 Decky Loader 的最新穩定版本。
      
