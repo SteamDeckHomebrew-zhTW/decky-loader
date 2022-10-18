@@ -52,9 +52,11 @@ Decky Loader 是一個用於Steam Deck 的自製外掛程式啟動器。它可�
 1. 開啟 Konsole 程式，選擇你要安裝的 Decky Loader 的版本，並將以下指令貼到 Konsole 應用程式中(程式右上角有 Paste 貼上按鈕)，然後按下鍵盤的 Enter。
    - **最新正式版**  
      為大多數使用者準備的。這是 Decky Loader 的最新穩定版本。
+     
      `curl -L https://github.com/SteamDeckHomebrew-zhTW/decky-loader/raw/main/dist/install_release.sh | sh`
    - **最新先行版**  
      為外掛程式開發者準備的。先行版不太可能是完全穩定的，但包含最新的變化。關於外掛程式開發的更多資訊，請查閱[wiki頁面（英文）](https://deckbrew.xyz/en/loader-dev/development).
+     
      `curl -L https://github.com/SteamDeckHomebrew-zhTW/decky-loader/raw/main/dist/install_prerelease.sh | sh`
 1. 打開桌面上「Return to Gaming Mode」捷徑。
 
