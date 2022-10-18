@@ -35,5 +35,5 @@ export default function SettingsPage() {
       route: '/decky/settings/developer',
     });
 
-  return <SidebarNavigation title="Decky Settings" showTitle pages={pages} />;
+  return <SidebarNavigation title="Decky 設定" showTitle pages={pages} />;
 }

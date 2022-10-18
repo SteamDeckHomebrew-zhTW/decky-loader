@@ -8,10 +8,10 @@ export default function RemoteDebuggingSettings() {
 
   return (
     <Field
-      label="允許遠端 CEF 除錯"
+      label="允許 CEF 遠端偵錯"
       description={
         <span style={{ whiteSpace: 'pre-line' }}>
-          允許你的網路中的任何人未經認證地存取 CEF 除錯器
+          允許你的網路中的任何人未經認證地存取 CEF 偵錯器
         </span>
       }
       icon={<FaBug style={{ display: 'block' }} />}

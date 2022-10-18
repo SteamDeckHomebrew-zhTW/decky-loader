@@ -92,7 +92,7 @@ export default function UpdaterSettings() {
       <Field
         onOptionsActionDescription={versionInfo?.all ? 'Patch Notes' : undefined}
         onOptionsButton={versionInfo?.all ? showPatchNotes : undefined}
-        label="Updates"
+        label="更新"
         description={
           versionInfo && (
             <span style={{ whiteSpace: 'pre-line' }}>{`目前版本：${versionInfo.current}\n${

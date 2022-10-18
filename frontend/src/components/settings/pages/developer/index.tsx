@@ -59,7 +59,7 @@ export default function DeveloperSettings() {
           description={
             <>
               <span style={{ whiteSpace: 'pre-line' }}>
-                啟用與執行 React DevTools 的電腦的連接。改變這個設定將重新載入 Steam。啟用前必須設定IP位址。
+                啟用與執行 React DevTools 的電腦的連接。改變這個設定將重新載入 Steam。啟用前必須設定 IP 位址。
               </span>
               <div ref={textRef}>
                 <TextField label={'IP'} value={reactDevtoolsIP} onChange={(e) => setReactDevtoolsIP(e?.target.value)} />
