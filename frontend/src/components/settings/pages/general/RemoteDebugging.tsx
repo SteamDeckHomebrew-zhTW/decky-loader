@@ -8,10 +8,10 @@ export default function RemoteDebuggingSettings() {
 
   return (
     <Field
-      label="Allow Remote CEF Debugging"
+      label="允許遠端 CEF 除錯"
       description={
         <span style={{ whiteSpace: 'pre-line' }}>
-          Allow unauthenticated access to the CEF debugger to anyone in your network
+          允許你的網路中的任何人未經認證地存取 CEF 除錯器
         </span>
       }
       icon={<FaBug style={{ display: 'block' }} />}

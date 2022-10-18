@@ -13,12 +13,12 @@ export default function SettingsPage() {
 
   const pages = [
     {
-      title: 'General',
+      title: '一般',
       content: <GeneralSettings isDeveloper={isDeveloper} setIsDeveloper={setIsDeveloper} />,
       route: '/decky/settings/general',
     },
     {
-      title: 'Plugins',
+      title: '外掛程式',
       content: <PluginList />,
       route: '/decky/settings/plugins',
     },
@@ -26,7 +26,7 @@ export default function SettingsPage() {
 
   if (isDeveloper)
     pages.push({
-      title: 'Developer',
+      title: '開發人員',
       content: (
         <WithSuspense>
           <DeveloperSettings />

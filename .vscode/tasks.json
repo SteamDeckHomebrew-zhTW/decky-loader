@@ -6,7 +6,7 @@
             "label": "checkforsettings",
             "type": "shell",
             "group": "none",
-            "detail": "Check that settings.json has been created",
+            "detail": "檢查是否建立了 settings.json",
             "command": "bash -c ${workspaceFolder}/.vscode/config.sh",
             "problemMatcher": []
         },
@@ -15,7 +15,7 @@
             "type": "shell",
             "group": "none",
             "dependsOn" : ["buildall"],
-            "detail": "Check for local runs, create a plugins folder",
+            "detail": "檢查本機執行，建立外掛的資料夾",
             "command": "mkdir -p plugins",
             "problemMatcher": []
         },
@@ -27,7 +27,7 @@
                 "updateremote",
                 "runpydeck"
             ],
-            "detail": "Task for remote run launches",
+            "detail": "遠端執行啟動任務",
             "command": "exit 0",
             "problemMatcher": []
         },
@@ -35,7 +35,7 @@
             "label": "dependencies",
             "type": "shell",
             "group": "none",
-            "detail": "Check for local runs, create a plugins folder",
+            "detail": "檢查本機執行，建立外掛的資料夾",
             "command": "rsync -azp --rsh='ssh -p ${config:deckport} ${config:deckkey}' requirements.txt deck@${config:deckip}:${config:deckdir}/homebrew/dev/pluginloader/requirements.txt && ssh deck@${config:deckip} -p ${config:deckport} ${config:deckkey} 'python -m ensurepip && python -m pip install --upgrade pip && python -m pip install --upgrade setuptools && python -m pip install -r ${config:deckdir}/homebrew/dev/pluginloader/requirements.txt'",
             "problemMatcher": []
         },
@@ -44,7 +44,7 @@
             "label": "pnpmsetup",
             "type": "shell",
             "group": "build",
-            "detail": "Setup pnpm",
+            "detail": "設定 pnpm",
             "command": "cd frontend && pnpm i",
             "problemMatcher": []
         },
@@ -61,7 +61,7 @@
         {
             "label": "buildall",
             "group": "build",
-            "detail": "Deploy pluginloader to deck",
+            "detail": "將外掛程式載入器安裝到 deck",
             "dependsOrder": "sequence",
             "dependsOn": [
                 "pnpmsetup",
@@ -72,7 +72,7 @@
         // DEPLOY
         {
             "label": "createfolders",
-            "detail": "Create plugins folder in expected directory",
+            "detail": "在預期目錄中建立外掛的資料夾",
             "type": "shell",
             "group": "none",
             "dependsOn": [
@@ -83,7 +83,7 @@
         },
         {
             "label": "deploy",
-            "detail": "Deploy dev PluginLoader to deck",
+            "detail": "在 Deck 部署 dev外掛程式載入器",
             "type": "shell",
             "group": "none",
             "command": "rsync -azp --delete --rsh='ssh -p ${config:deckport} ${config:deckkey}' --exclude='.git/' --exclude='.github/' --exclude='.vscode/' --exclude='frontend/' --exclude='dist/' --exclude='contrib/' --exclude='*.log' --exclude='requirements.txt' --exclude='backend/__pycache__/' --exclude='.gitignore' . deck@${config:deckip}:${config:deckdir}/homebrew/dev/pluginloader",
@@ -92,7 +92,7 @@
         // RUN
         {
             "label": "runpydeck",
-            "detail": "Run indev PluginLoader on Deck",
+            "detail": "在 Deck 執行 indev外掛程式載入器",
             "type": "shell",
             "group": "none",
             "dependsOn" : ["checkforsettings"],
@@ -101,7 +101,7 @@
         },
         {
             "label": "runpylocal",
-            "detail": "Run PluginLoader from python locally",
+            "detail": "從本機 Python 執行外掛程式載入器",
             "type": "shell",
             "group": "none",
             "command": "export PLUGIN_PATH=${workspaceFolder}/plugins; export CHOWN_PLUGIN_PATH=0; sudo -E python3 ${workspaceFolder}/backend/main.py",
@@ -110,7 +110,7 @@
         // ALL-IN-ONES
         {
             "label": "updateremote",
-            "detail": "Build and deploy",
+            "detail": "構建及部署",
             "dependsOrder": "sequence",
             "group": "none",
             "dependsOn": [
@@ -121,7 +121,7 @@
         },
         {
             "label": "updateandrun",
-            "detail": "Build, deploy and run",
+            "detail": "構建、部署及執行",
             "dependsOrder": "sequence",
             "group": {
                 "kind": "build",
@@ -136,7 +136,7 @@
         },
         {
             "label": "allinone",
-            "detail": "Build, install dependencies, deploy and run",
+            "detail": "構建、安裝依賴項、部署及運行",
             "dependsOrder": "sequence",
             "group": {
                 "kind": "build",

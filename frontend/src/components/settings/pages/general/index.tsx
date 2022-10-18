@@ -31,8 +31,8 @@ export default function GeneralSettings({
       <BranchSelect />
       <RemoteDebuggingSettings />
       <Field
-        label="Developer mode"
-        description={<span style={{ whiteSpace: 'pre-line' }}>Enables Decky's developer settings.</span>}
+        label="開發人員模式"
+        description={<span style={{ whiteSpace: 'pre-line' }}>啟用 Decky 的開發人員設定</span>}
         icon={<FaTools style={{ display: 'block' }} />}
       >
         <Toggle
@@ -43,12 +43,12 @@ export default function GeneralSettings({
         />
       </Field>
       <Field
-        label="Manual plugin install"
-        description={<TextField label={'URL'} value={pluginURL} onChange={(e) => setPluginURL(e?.target.value)} />}
+        label="手動安裝外掛程式"
+        description={<TextField label={'網址'} value={pluginURL} onChange={(e) => setPluginURL(e?.target.value)} />}
         icon={<FaShapes style={{ display: 'block' }} />}
       >
         <DialogButton disabled={pluginURL.length == 0} onClick={() => installFromURL(pluginURL)}>
-          Install
+          安裝
         </DialogButton>
       </Field>
     </div>

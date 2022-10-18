@@ -111,14 +111,14 @@ jobs:
       uses: rez0n/actions-github-release@main
       id: latest_release
       env:
-        token: ${{ secrets.GITHUB_TOKEN }}
-        repository: "SteamDeckHomebrew/decky-loader"
+        token: ${{ secrets.TOKEN }}
+        repository: "SteamDeckHomebrew-zhTW/decky-loader"
         type: "nodraft"
 
     - name: Prepare tag ⚙️
       id: ready_tag
       run: |
-        export VERSION=${{ steps.latest_release.outputs.release }}
+        export VERSION="v0.0.1"
         echo "VERS: $VERSION"
         OUT="notsemver"
         if [[ "$VERSION" =~ "-pre" ]]; then
@@ -192,8 +192,8 @@ jobs:
       uses: rez0n/actions-github-release@main
       id: latest_release
       env:
-        token: ${{ secrets.GITHUB_TOKEN }}
-        repository: "SteamDeckHomebrew/decky-loader"
+        token: ${{ secrets.TOKEN }}
+        repository: "SteamDeckHomebrew-zhTW/decky-loader"
         type: "nodraft"
 
     - name: Prepare tag ⚙️

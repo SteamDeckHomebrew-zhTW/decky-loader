@@ -43,7 +43,7 @@ function PatchNotesModal({ versionInfo, closeModal }: { versionInfo: VerInfo | n
                     <MarkdownRenderer onDismiss={closeModal}>{versionInfo.all[id].body}</MarkdownRenderer>
                   </WithSuspense>
                 ) : (
-                  'no patch notes for this version'
+                  '這個版本沒有補丁說明'
                 )}
               </div>
             </Focusable>
@@ -95,8 +95,8 @@ export default function UpdaterSettings() {
         label="Updates"
         description={
           versionInfo && (
-            <span style={{ whiteSpace: 'pre-line' }}>{`Current version: ${versionInfo.current}\n${
-              versionInfo.updatable ? `Latest version: ${versionInfo.remote?.tag_name}` : ''
+            <span style={{ whiteSpace: 'pre-line' }}>{`目前版本：${versionInfo.current}\n${
+              versionInfo.updatable ? `最新版本：${versionInfo.remote?.tag_name}` : ''
             }`}</span>
           )
         }
@@ -126,10 +126,10 @@ export default function UpdaterSettings() {
             }
           >
             {checkingForUpdates
-              ? 'Checking'
+              ? '正在檢查'
               : !versionInfo?.remote || versionInfo?.remote?.tag_name == versionInfo?.current
-              ? 'Check For Updates'
-              : 'Install Update'}
+              ? '檢查更新'
+              : '安裝更新'}
           </DialogButton>
         ) : (
           <ProgressBarWithInfo
@@ -137,7 +137,7 @@ export default function UpdaterSettings() {
             bottomSeparator="none"
             nProgress={updateProgress}
             indeterminate={reloading}
-            sOperationText={reloading ? 'Reloading' : 'Updating'}
+            sOperationText={reloading ? '正在重新載入' : '正在更新'}
           />
         )}
       </Field>

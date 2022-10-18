@@ -15,7 +15,7 @@ export default function PluginList() {
   if (plugins.length === 0) {
     return (
       <div>
-        <p>No plugins installed</p>
+        <p>未安裝外掛程式</p>
       </div>
     );
   }
@@ -36,7 +36,7 @@ export default function PluginList() {
                   onClick={() => requestPluginInstall(name, update)}
                 >
                   <div style={{ display: 'flex', flexDirection: 'row' }}>
-                    Update to {update.name}
+                    更新至 {update.name}
                     <FaDownload style={{ paddingLeft: '2rem' }} />
                   </div>
                 </DialogButton>
@@ -45,11 +45,11 @@ export default function PluginList() {
                 style={{ height: '40px', width: '40px', padding: '10px 12px', minWidth: '40px' }}
                 onClick={(e: MouseEvent) =>
                   showContextMenu(
-                    <Menu label="Plugin Actions">
+                    <Menu label="外掛程式操作">
                       <MenuItem onSelected={() => window.DeckyPluginLoader.importPlugin(name, version)}>
-                        Reload
+                        重新載入
                       </MenuItem>
-                      <MenuItem onSelected={() => window.DeckyPluginLoader.uninstallPlugin(name)}>Uninstall</MenuItem>
+                      <MenuItem onSelected={() => window.DeckyPluginLoader.uninstallPlugin(name)}>解除安裝</MenuItem>
                     </Menu>,
                     e.currentTarget ?? window,
                   )

@@ -2,7 +2,7 @@
 
 [ "$UID" -eq 0 ] || exec sudo "$0" "$@"
 
-echo "Uninstalling Steam Deck Plugin Loader..."
+echo "正在解除安裝 Steam Deck Plugin Loader..."
 
 USER_DIR="$(getent passwd $SUDO_USER | cut -d: -f6)"
 HOMEBREW_FOLDER="${USER_DIR}/homebrew"

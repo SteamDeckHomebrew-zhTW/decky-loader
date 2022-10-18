@@ -14,11 +14,11 @@ export default function DeveloperSettings() {
   return (
     <>
       <Field
-        label="Enable Valve Internal"
+        label="啟用 Valve 內建"
         description={
           <span style={{ whiteSpace: 'pre-line' }}>
-            Enables the Valve internal developer menu.{' '}
-            <span style={{ color: 'red' }}>Do not touch anything in this menu unless you know what it does.</span>
+            啟用 Valve 內建開發人員選單。{' '}
+            <span style={{ color: 'red' }}>除非你知道它的作用，否則不要碰這個選單中的任何東西。</span>
           </span>
         }
         icon={<FaSteamSymbol style={{ display: 'block' }} />}
@@ -55,12 +55,11 @@ export default function DeveloperSettings() {
         }
       >
         <Field
-          label="Enable React DevTools"
+          label="啟用 React DevTools"
           description={
             <>
               <span style={{ whiteSpace: 'pre-line' }}>
-                Enables connection to a computer running React DevTools. Changing this setting will reload Steam. Set
-                the IP address before enabling.
+                啟用與執行 React DevTools 的電腦的連接。改變這個設定將重新載入 Steam。啟用前必須設定IP位址。
               </span>
               <div ref={textRef}>
                 <TextField label={'IP'} value={reactDevtoolsIP} onChange={(e) => setReactDevtoolsIP(e?.target.value)} />
