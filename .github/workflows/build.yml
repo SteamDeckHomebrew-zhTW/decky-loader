@@ -118,7 +118,7 @@ jobs:
     - name: Prepare tag ⚙️
       id: ready_tag
       run: |
-        export VERSION="v0.0.1-pre"
+        export VERSION="v0.0.1"
         echo "VERS: $VERSION"
         OUT="notsemver"
         if [[ "$VERSION" =~ "-pre" ]]; then
@@ -199,7 +199,7 @@ jobs:
     - name: Prepare tag ⚙️
       id: ready_tag
       run: |
-        export VERSION=${{ steps.latest_release.outputs.release }}
+        export VERSION="v0.0.1"
         echo "VERS: $VERSION"
         OUT=""
         if [[ ! "$VERSION" =~ "-pre" ]]; then
