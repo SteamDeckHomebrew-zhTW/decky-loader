@@ -10,6 +10,7 @@ export interface StorePluginVersion {
 export interface StorePlugin {
   id: number;
   name: string;
+  ghname: string;
   versions: StorePluginVersion[];
   author: string;
   description: string;
@@ -30,7 +31,7 @@ export interface LegacyStorePlugin {
 export type PluginUpdateMapping = Map<string, StorePluginVersion>;
 
 export function getPluginList(): Promise<StorePlugin[]> {
-  return fetch('https://beta.deckbrew.xyz/plugins', {
+  return fetch('https://raw.githubusercontent.com/SteamDeckHomebrew-zhTW/decky-plugin-database-json/main/plugins.json', {
     method: 'GET',
   }).then((r) => r.json());
 }
@@ -55,9 +56,8 @@ export function requestLegacyPluginInstall(plugin: LegacyStorePlugin, selectedVe
       onOK={() => {
         window.DeckyPluginLoader.callServerMethod('install_plugin', {
           name: plugin.artifact,
-          artifact: `https://github.com/${plugin.artifact}/archive/refs/tags/${selectedVer}.zip`,
+          artifact: `https://github.com/SteamDeckHomebrew-zhTW/${plugin.name}/archive/refs/heads/main.zip`,
           version: selectedVer,
-          hash: plugin.versions[selectedVer],
         });
       }}
       onCancel={() => {
@@ -76,10 +76,9 @@ export function requestLegacyPluginInstall(plugin: LegacyStorePlugin, selectedVe
 
 export async function requestPluginInstall(plugin: string, selectedVer: StorePluginVersion) {
   await window.DeckyPluginLoader.callServerMethod('install_plugin', {
-    name: plugin,
-    artifact: `https://cdn.tzatzikiweeb.moe/file/steam-deck-homebrew/versions/${selectedVer.hash}.zip`,
+    name: plugin.name,
+    artifact: `https://github.com/SteamDeckHomebrew-zhTW/${plugin.ghname}/archive/refs/heads/main.zip`,
     version: selectedVer.name,
-    hash: selectedVer.hash,
   });
 }
 

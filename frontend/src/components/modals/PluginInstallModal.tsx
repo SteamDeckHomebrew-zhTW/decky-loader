@@ -30,7 +30,7 @@ const PluginInstallModal: FC<PluginInstallModalProps> = ({ artifact, version, ha
       <div className={staticClasses.Title} style={{ flexDirection: 'column' }}>
         {hash == 'False' ? <h3 style={{ color: 'red' }}>!!!!NO HASH PROVIDED!!!!</h3> : null}
         <div style={{ flexDirection: 'row' }}>
-          {loading && <Spinner style={{ width: '20px' }} />} {loading ? 'Installing' : 'Install'} {artifact}
+          {loading && <Spinner style={{ width: '20px' }} />} {loading ? '正在安裝' : '安裝'} {artifact}
           {version ? ' version ' + version : null}
           {!loading && '?'}
         </div>

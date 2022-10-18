@@ -117,7 +117,7 @@ const PluginCard: FC<PluginCardProps> = ({ plugin }) => {
               className={joinClassNames(staticClasses.PanelSectionRow)}
               style={{ marginTop: '0px', marginLeft: '16px' }}
             >
-              <span style={{ paddingLeft: '0px' }}>Author: {plugin.author}</span>
+              <span style={{ paddingLeft: '0px' }}>作者：{plugin.author}</span>
             </p>
             <p
               className={joinClassNames(staticClasses.PanelSectionRow)}
@@ -139,7 +139,7 @@ const PluginCard: FC<PluginCardProps> = ({ plugin }) => {
                 gap: '5px 10px',
               }}
             >
-              <span style={{ padding: '5px 0' }}>Tags:</span>
+              <span style={{ padding: '5px 0' }}>標籤：</span>
               {plugin.tags.map((tag: string) => (
                 <span
                   className="deckyStoreCardTag"
@@ -149,7 +149,7 @@ const PluginCard: FC<PluginCardProps> = ({ plugin }) => {
                     background: tag == 'root' ? '#842029' : '#ACB2C947',
                   }}
                 >
-                  {tag == 'root' ? 'Requires root' : tag}
+                  {tag == 'root' ? '需要 root 權限' : tag}
                 </span>
               ))}
               {isLegacyPlugin(plugin) && (
@@ -197,10 +197,10 @@ const PluginCard: FC<PluginCardProps> = ({ plugin }) => {
                 onClick={() =>
                   isLegacyPlugin(plugin)
                     ? requestLegacyPluginInstall(plugin, Object.keys(plugin.versions)[selectedOption])
-                    : requestPluginInstall(plugin.name, plugin.versions[selectedOption])
+                    : requestPluginInstall(plugin, plugin.versions[selectedOption])
                 }
               >
-                Install
+                安裝
               </DialogButton>
             </div>
             <div
